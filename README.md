@@ -1,4 +1,5 @@
-#Convert to ASCII
+# Convert to ASCII
+
 Aplicativo desktop simples desenvolvido em 2015 durante estudos de programação por conta própria, utilizando B4J (Basic4Java).
 O projeto foi mantido em sua forma original — apenas o framework e a build foram atualizados.
 
