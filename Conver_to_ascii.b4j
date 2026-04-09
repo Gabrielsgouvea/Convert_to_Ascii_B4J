@@ -1,0 +1,50 @@
+﻿AppType=JavaFX
+Build1=Convert_to_ascii,b4j.example
+File1=converttoascii.bjl
+FileGroup1=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=jxui
+NumberOfFiles=1
+NumberOfLibraries=3
+NumberOfModules=0
+Version=10.5
+@EndOfDesignText@
+#Region Project Attributes
+    #MainFormWidth: 600
+    #MainFormHeight: 400
+#End Region
+
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private btok As Button
+	Private lbstring As Label
+	Private txtin As TextField
+	Private lbascii As Label
+	Private guard, C As String
+	Private B As Int
+End Sub
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("converttoascii") 'Load the layout file.
+	MainForm.Show
+	MainForm.WindowWidth = 315
+	MainForm.WindowHeight = 145
+
+End Sub
+Sub btok_Action
+	guard = txtin.Text
+	B = Asc(guard)
+	lbascii.Text = B
+	C = Chr(B)
+	lbstring.Text = C
+End Sub
+Sub txtin_TextChanged(Old As String, New As String)
+	If New.Length > 1 Then
+		txtin.Text = Old
+		txtin.SetSelection(1, 1)
+	End If
+End Sub
